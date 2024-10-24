@@ -1,16 +1,20 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-const port = process.env.PORT || 3000;
+// Import the http module
+var http = require("http");
 
-// Serve static files from the Node_Project/Assignments folder
-app.use(express.static(path.join(__dirname, 'Node_Project', 'Assignments')));
+// Define the port (use process.env.PORT for deployment or 3001 locally)
+const port = process.env.PORT || 3001;
 
-// Route to serve the index.html file
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Node_Project', 'Assignments', 'index.html'));
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// Create the server
+http
+  .createServer(function (req, res) {
+    // Set the HTTP header with a status of 200 (OK) and the content type to HTML
+    res.writeHead(200, { "Content-Type": "text/html" });
+    
+    // Send the response "Hello World!"
+    res.end("Hello World!");
+  })
+  
+  // Listen on the specified port
+  .listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
