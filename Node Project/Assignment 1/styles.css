@@ -1,0 +1,23 @@
+.assignment {
+    text-align: center; /* Center-align everything */
+    margin: 20px auto;
+  }
+  
+  .assignment img {
+    width: 300px; /* Adjust the width based on the image size you want */
+    height: auto; /* Ensure the image maintains aspect ratio */
+    border: 1px solid #ccc; /* Optional: Add a border to the image */
+  }
+  
+  .links a {
+    display: block; /* Ensures the links are vertically aligned */
+    margin-top: 10px;
+    font-size: 18px;
+    color: #000; /* Change color as needed */
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    text-decoration: underline; /* Optional: Underline on hover */
+  }
+  
